@@ -13,18 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+# Rota padrão
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('login', function(){
-    return view('login');
-});
-
-Route::get('home', function(){
     return view('home');
 });
 
-
 # Rotas de pacientes
 Route::get('pacientes', 'PacientesController@PacientesShow');
+
+# Rotas para autenticação
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', 'HomeController@logout')->name('logout');
