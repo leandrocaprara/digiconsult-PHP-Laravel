@@ -13,16 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-# Rota padrão
-Route::get('/', function () {
-    return view('home');
-});
+# Rotas para autenticação
+Auth::routes([
+    'register' => false
+]);
+Route::get('/', 'HomeController@index')->name('home')->middleware('auth');
+Route::get('/logout', 'HomeController@logout')->name('logout');
 
 # Rotas de pacientes
-Route::get('pacientes', 'PacientesController@PacientesShow');
-
-# Rotas para autenticação
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/logout', 'HomeController@logout')->name('logout');
+Route::post('/pacientes/destroy/{id}', 'PacienteController@destroy')->name('pacientes.destroy');
+Route::post('/pacientes/edit/{id}', 'PacienteController@edit')->name('pacientes.edit');
+Route::post('/pacientes/update/{id}', 'PacienteController@update')->name('pacientes.update');
+Route::get('/pacientes/show/{id}', 'PacienteController@show')->name('pacientes.show');
+Route::post('/pacientes', 'PacienteController@store')->name('pacientes.store');
+Route::get('/pacientes', 'PacienteController@index')->name('pacientes.index');
+Route::get('/pacientes/create', 'PacienteController@create')->name('pacientes.create');
