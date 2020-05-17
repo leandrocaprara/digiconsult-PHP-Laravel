@@ -6,8 +6,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title" style="float: left;">Pacientes</h4>
-                        <span class="material-icons" style="float: right;"><a href="{{ route('pacientes.create') }}" style="color: white;">add</a></span>
+                        <h4 class="card-title" style="float: left;">Planos</h4>
+                        <span class="material-icons" style="float: right;"><a href="{{ route('planos.create') }}" style="color: white;">add</a></span>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -20,30 +20,24 @@
                                         Nome
                                     </th>
                                     <th>
-                                        CPF
-                                    </th>
-                                    <th>
                                         Ações
                                     </th>
                                 </thead>
-                                @foreach ($pacientes as $paciente)
+                                @foreach ($planos as $plano)
                                 <tbody>
                                     <tr>
                                         <td>
-                                            {{ $paciente->id }}
+                                            {{ $plano->id }}
                                         </td>
                                         <td>
-                                            <a href="{{ route('pacientes.show', $paciente->id) }}">{{ $paciente->name }}</a>
-                                        </td>
-                                        <td>
-                                            {{ $paciente->cpf }}
+                                            <a href="{{ route('planos.show', $plano->id) }}">{{ $plano->name }}</a>
                                         </td>
                                         <td class="text-primary">
-                                        <form action="{{ route('pacientes.destroy', $paciente->id) }}" method="POST" class="form-button-actions form-button-delete">
+                                        <form action="{{ route('planos.destroy', $plano->id) }}" method="POST" class="form-button-actions form-button-delete">
                                             @csrf
                                             <button type="submit" class="material-icons" onclick="return confirm('Tem certeza que deseja excluir?')">delete</button>
                                         </form>
-                                        <form action="{{ route('pacientes.edit', $paciente->id) }}" method="POST" class="form-button-actions">
+                                        <form action="{{ route('planos.edit', $plano->id) }}" method="POST" class="form-button-actions">
                                             @csrf
                                             <button type="submit" class="material-icons">create</button>
                                         </form>

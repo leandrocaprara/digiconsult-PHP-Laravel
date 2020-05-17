@@ -40,17 +40,31 @@
                 <p>User Profile</p>
               </a>
             </li>
-            <li class="nav-item collapsed" data-toggle="collapse" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            <li class="nav-item collapsed" data-toggle="collapse" href="#collapseOnePaciente" aria-expanded="false" aria-controls="collapseOne">
               <a class="nav-link">
                 <i class="material-icons">content_paste</i>
                 <p>Pacientes<b class="caret"></b></p>
               </a>
             </li>
             <ul>
-              <li class="nav-item collapse" id="collapseOne" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+              <li class="nav-item collapse" id="collapseOnePaciente" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
                 <a class="nav-link" href="{{ route('pacientes.index') }}">
                   <i class="material-icons">content_paste</i>
                   <p>Pacientes</p>
+                </a>
+              </li>
+            </ul>
+            <li class="nav-item collapsed" data-toggle="collapse" href="#collapseOnePlanos" aria-expanded="false" aria-controls="collapseOne">
+              <a class="nav-link">
+                <i class="material-icons">content_paste</i>
+                <p>Planos<b class="caret"></b></p>
+              </a>
+            </li>
+            <ul>
+              <li class="nav-item collapse" id="collapseOnePlanos" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                <a class="nav-link" href="{{ route('planos.index') }}">
+                  <i class="material-icons">content_paste</i>
+                  <p>Planos</p>
                 </a>
               </li>
             </ul>

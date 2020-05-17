@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Paciente;
 
-class PacienteController extends Controller
+class PacientesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -79,7 +79,7 @@ class PacienteController extends Controller
      */
     public function edit($id)
     {
-        $paciente = Paciente::find($id);
+        $paciente = Paciente::findOrFail($id);
 
         return view('pacientes.edit', ['paciente' => $paciente]);
     }
