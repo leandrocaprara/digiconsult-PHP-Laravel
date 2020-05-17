@@ -41,7 +41,7 @@
                                         <td class="text-primary">
                                         <form action="{{ route('pacientes.destroy', $paciente->id) }}" method="POST" class="form-button-actions form-button-delete">
                                             @csrf
-                                            <button type="submit" class="material-icons" onclick="functionConfirm()">delete</button>
+                                            <button type="submit" class="material-icons" onclick="return confirm('Tem certeza que deseja excluir?')">delete</button>
                                         </form>
                                         <form action="{{ route('pacientes.edit', $paciente->id) }}" method="POST" class="form-button-actions">
                                             @csrf
@@ -59,9 +59,4 @@
         </div>
     </div>
 </div>
-<script>
-    function functionConfirm(){
-        confirm('Deseja realmente deletar esse paciente?');
-    }
-</script>
 @endsection

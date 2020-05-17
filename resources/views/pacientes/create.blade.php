@@ -17,13 +17,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Nome</label>
-                                        <input type="text" class="form-control" name="name">
+                                        <input type="text" class="form-control" name="name" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Email </label>
-                                        <input type="email" class="form-control" name="email">
+                                        <input type="email" class="form-control" name="email" required>
                                     </div>
                                 </div>
                             </div>
@@ -31,7 +31,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">CPF</label>
-                                        <input type="text" class="form-control" name="cpf">
+                                        <input type="text" class="form-control" name="cpf" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
