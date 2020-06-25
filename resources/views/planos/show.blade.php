@@ -21,7 +21,9 @@
                             </div>
                         </div>
                         <div class="row">
-                            <a href="{{ route('pacientes.index') }}" class="btn btn-primary pull-right">Voltar</a>
+                            <div class="col-md-6">
+                                <a href="{{ route('pacientes.index') }}" class="btn btn-primary pull-right">Voltar</a>
+                            </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>

@@ -61,7 +61,11 @@
                                     <label class="bmd-label-floating">{{ $paciente->cep }}</label>
                                 </div>
                             </div>
-                            <a href="{{ route('pacientes.index') }}" class="btn btn-primary pull-right">Voltar</a>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="{{ route('pacientes.index') }}" class="btn btn-primary pull-right">Voltar</a>
+                            </div>
                         </div>
                         <div class="clearfix"></div>
                     </div>
