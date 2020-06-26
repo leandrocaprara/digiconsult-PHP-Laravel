@@ -37,11 +37,10 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Plano de saúde</label>
-                                        <select id="plano" name="plano">
-                                            <option value="1">Unimed</option>
-                                            <option value="2">Oeste Saúde</option>
-                                            <option value="3">Athia</option>
-                                            <option value="4">Amil</option>
+                                        <select id="plano" name="planos_id">
+                                            @foreach($planos as $plano)
+                                                <option value="{{ $plano->id }}" {{ $paciente->planos_id == $plano->id ? 'selected' : '' }}>{{ $plano->name }}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>

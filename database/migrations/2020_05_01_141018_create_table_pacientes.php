@@ -23,7 +23,8 @@ class CreateTablePacientes extends Migration
             $table->string('cidade', 20)->nullable();
             $table->string('pais', 20)->nullable();
             $table->string('cep', 8)->nullable();
-            $table->integer('plano');
+            $table->unsignedBigInteger('planos_id', false);
+            $table->foreign('planos_id')->references('id')->on('planos')->onDelete('cascade');
         });
     }
 

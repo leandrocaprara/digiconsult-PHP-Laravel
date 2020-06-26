@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Paciente;
+use App\Plano;
 
 class PacientesController extends Controller
 {
@@ -32,7 +33,8 @@ class PacientesController extends Controller
      */
     public function create()
     {
-        return view('pacientes.create');
+        $planos = Plano::all();
+        return view('pacientes.create', ['planos' => $planos]);
     }
 
     /**
@@ -44,15 +46,14 @@ class PacientesController extends Controller
     public function store(Request $request)
     {
         $paciente = new Paciente();
-
         $paciente->name = request('name');
         $paciente->email = request('email');
         $paciente->cpf = request('cpf');
-        $paciente->plano = request('plano');
         $paciente->endereco = request('endereco');
         $paciente->cidade = request('cidade');
         $paciente->pais = request('pais');
         $paciente->cep = request('cep');
+        $paciente->planos_id = request('planos_id');
         $paciente->save();
         
         return redirect('/pacientes');
@@ -80,8 +81,8 @@ class PacientesController extends Controller
     public function edit($id)
     {
         $paciente = Paciente::findOrFail($id);
-
-        return view('pacientes.edit', ['paciente' => $paciente]);
+        $plano = Plano::all();
+        return view('pacientes.edit', ['paciente' => $paciente, 'planos' => $plano]);
     }
 
     /**
@@ -94,11 +95,11 @@ class PacientesController extends Controller
     public function update(Request $request, $id)
     {
         $paciente = Paciente::findOrFail($id);
-
+        
         $paciente->name = request('name');
         $paciente->email = request('email');
         $paciente->cpf = request('cpf');
-        $paciente->plano = request('plano');
+        $paciente->planos_id = request('planos_id');
         $paciente->endereco = request('endereco');
         $paciente->cidade = request('cidade');
         $paciente->pais = request('pais');
