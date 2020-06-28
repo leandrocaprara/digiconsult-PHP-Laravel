@@ -17,13 +17,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Nome</label>
-                                        <input type="text" class="form-control" name="name" value="{{ $paciente->name }}">
+                                        <input type="text" class="form-control" name="name" id="name" value="{{ $paciente->name }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Email </label>
-                                        <input type="email" class="form-control" name="email" value="{{ $paciente->email }}">
+                                        <input type="email" class="form-control" name="email" id="email" value="{{ $paciente->email }}">
                                     </div>
                                 </div>
                             </div>
@@ -31,7 +31,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">CPF</label>
-                                        <input type="text" class="form-control" name="cpf" value="{{ $paciente->cpf }}">
+                                        <input type="text" class="form-control" name="cpf" id="cpf" value="{{ $paciente->cpf }}">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -46,30 +46,44 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">CEP</label>
+                                        <input type="text" class="form-control" name="cep" id="cep" maxlength="8" onblur="pesquisacep(this.value);" value="{{ $paciente->cep }}">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Endereço</label>
-                                        <input type="text" class="form-control" name="endereco" value="{{ $paciente->endereco }}">
+                                        <input type="text" class="form-control" name="endereco" id="endereco" value="{{ $paciente->endereco }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Número</label>
+                                        <input type="text" class="form-control" name="numero" id="numero" value="{{ $paciente->numero }}">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        <label class="bmd-label-floating">Bairro</label>
+                                        <input type="text" class="form-control" name="bairro" id="bairro" value="{{ $paciente->bairro }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
                                         <label class="bmd-label-floating">Cidade</label>
-                                        <input type="text" class="form-control" name="cidade" value="{{ $paciente->cidade }}">
+                                        <input type="text" class="form-control" name="cidade" id="cidade" value="{{ $paciente->cidade }}">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="bmd-label-floating">País</label>
-                                        <input type="text" class="form-control" name="pais" value="{{ $paciente->pais }}">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">CEP</label>
-                                        <input type="text" class="form-control" name="cep" value="{{ $paciente->cep }}">
+                                        <label class="bmd-label-floating">Estado</label>
+                                        <input type="text" class="form-control" name="estado" id="estado" value="{{ $paciente->estado }}">
                                     </div>
                                 </div>
                             </div>

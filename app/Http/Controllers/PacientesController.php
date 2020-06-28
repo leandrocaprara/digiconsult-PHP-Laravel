@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 use App\Paciente;
@@ -21,7 +22,10 @@ class PacientesController extends Controller
     
     public function index()
     {
-        $pacientes = Paciente::all();
+        $pacientes = DB::table('pacientes')
+                        ->join('planos', 'pacientes.planos_id', '=', 'planos.id')
+                        ->select('pacientes.*', 'planos.name as plano_name')
+                        ->get();
 
         return view('pacientes.index', ['pacientes' => $pacientes]);
     }
@@ -51,7 +55,9 @@ class PacientesController extends Controller
         $paciente->cpf = request('cpf');
         $paciente->endereco = request('endereco');
         $paciente->cidade = request('cidade');
-        $paciente->pais = request('pais');
+        $paciente->estado = request('estado');
+        $paciente->bairro = request('bairro');
+        $paciente->numero = request('numero');
         $paciente->cep = request('cep');
         $paciente->planos_id = request('planos_id');
         $paciente->save();
@@ -102,7 +108,9 @@ class PacientesController extends Controller
         $paciente->planos_id = request('planos_id');
         $paciente->endereco = request('endereco');
         $paciente->cidade = request('cidade');
-        $paciente->pais = request('pais');
+        $paciente->estado = request('estado');
+        $paciente->bairro = request('bairro');
+        $paciente->numero = request('numero');
         $paciente->cep = request('cep');
         $paciente->update();
         

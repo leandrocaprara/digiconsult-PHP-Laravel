@@ -23,6 +23,9 @@
                                         CPF
                                     </th>
                                     <th>
+                                        Plano
+                                    </th>
+                                    <th>
                                         Ações
                                     </th>
                                 </thead>
@@ -37,6 +40,9 @@
                                         </td>
                                         <td>
                                             {{ $paciente->cpf }}
+                                        </td>
+                                        <td>
+                                            {{ $paciente->plano_name }}
                                         </td>
                                         <td class="text-primary">
                                         <form action="{{ route('pacientes.destroy', $paciente->id) }}" method="POST" class="form-button-actions form-button-delete">

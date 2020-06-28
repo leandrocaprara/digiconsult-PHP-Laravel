@@ -255,6 +255,7 @@
     <script src='/js/material-dashboard.js' type="text/javascript"></script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
     <script src='/demo/demo.js'></script>
+    <script src='/js/digiconsult.js'></script>
     <script>
     $(document).ready(function() {
         $().ready(function() {

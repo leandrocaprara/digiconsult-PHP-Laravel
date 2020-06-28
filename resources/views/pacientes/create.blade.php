@@ -17,13 +17,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Nome</label>
-                                        <input type="text" class="form-control" name="name" required>
+                                        <input type="text" class="form-control" name="name" id="name" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Email </label>
-                                        <input type="email" class="form-control" name="email" required>
+                                        <input type="email" class="form-control" name="email" id="email" required>
                                     </div>
                                 </div>
                             </div>
@@ -31,13 +31,13 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">CPF</label>
-                                        <input type="text" class="form-control" name="cpf" required>
+                                        <input type="text" class="form-control" name="cpf" id="cpf" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Plano de saúde</label>
-                                        <select id="plano" name="planos_id">
+                                        <select id="plano" name="planos_id" id="planos_id">
                                         @foreach ($planos as $plano)
                                             <option value="{{ $plano->id }}">{{ $plano->name }}</option>
                                         @endforeach
@@ -46,30 +46,44 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">CEP</label>
+                                        <input type="text" class="form-control" name="cep" id="cep" value="" maxlength="8" onblur="pesquisacep(this.value);">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-8">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Endereço</label>
-                                        <input type="text" class="form-control" name="endereco">
+                                        <input type="text" class="form-control" name="endereco" id="endereco" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Número</label>
+                                        <input type="text" class="form-control" name="numero" id="numero" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
+                                        <label class="bmd-label-floating">Bairro</label>
+                                        <input type="text" class="form-control" name="bairro" id="bairro">
+                                    </div>
+                                </div>  
+                                <div class="col-md-4">
+                                    <div class="form-group">
                                         <label class="bmd-label-floating">Cidade</label>
-                                        <input type="text" class="form-control" name="cidade">
+                                        <input type="text" class="form-control" name="cidade" id="cidade">
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="bmd-label-floating">País</label>
-                                        <input type="text" class="form-control" name="pais">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">CEP</label>
-                                        <input type="text" class="form-control" name="cep">
+                                        <label class="bmd-label-floating">Estado</label>
+                                        <input type="text" class="form-control" name="estado" id="estado">
                                     </div>
                                 </div>
                             </div>
