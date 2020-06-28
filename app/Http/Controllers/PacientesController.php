@@ -87,8 +87,7 @@ class PacientesController extends Controller
     public function edit($id)
     {
         $paciente = Paciente::findOrFail($id);
-        $plano = Plano::all();
-        return view('pacientes.edit', ['paciente' => $paciente, 'planos' => $plano]);
+        return view('pacientes.edit', ['paciente' => $paciente]);
     }
 
     /**

@@ -68,6 +68,34 @@
                 </a>
               </li>
             </ul>
+            <li class="nav-item collapsed" data-toggle="collapse" href="#collapseOneEspecialidades" aria-expanded="false" aria-controls="collapseOne">
+              <a class="nav-link">
+                <i class="material-icons">content_paste</i>
+                <p>Especialidades<b class="caret"></b></p>
+              </a>
+            </li>
+            <ul>
+              <li class="nav-item collapse" id="collapseOneEspecialidades" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                <a class="nav-link" href="{{ route('especialidades.index') }}">
+                  <i class="material-icons">content_paste</i>
+                  <p>Especialidades</p>
+                </a>
+              </li>
+            </ul>
+            <li class="nav-item collapsed" data-toggle="collapse" href="#collapseOneMedicos" aria-expanded="false" aria-controls="collapseOne">
+              <a class="nav-link">
+                <i class="material-icons">content_paste</i>
+                <p>Médicos<b class="caret"></b></p>
+              </a>
+            </li>
+            <ul>
+              <li class="nav-item collapse" id="collapseOneMedicos" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                <a class="nav-link" href="{{ route('medicos.index') }}">
+                  <i class="material-icons">content_paste</i>
+                  <p>Médicos</p>
+                </a>
+              </li>
+            </ul>
             <li class="nav-item ">
               <a class="nav-link" href="./typography.html">
                 <i class="material-icons">library_books</i>

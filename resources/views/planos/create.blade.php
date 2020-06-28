@@ -7,7 +7,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title">Paciente</h4>
+                        <h4 class="card-title">Plano</h4>
                         <p class="card-category">Preencha as informações do plano</p>
                     </div>
                     <div class="card-body">

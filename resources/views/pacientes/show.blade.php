@@ -57,8 +57,8 @@
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="bmd-label-floating">País:</label>
-                                    <label class="bmd-label-floating">{{ $paciente->pais }}</label>
+                                    <label class="bmd-label-floating">Bairro:</label>
+                                    <label class="bmd-label-floating">{{ $paciente->bairro }}</label>
                                 </div>
                             </div>
                             <div class="col-md-4">

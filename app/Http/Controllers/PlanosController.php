@@ -73,7 +73,6 @@ class PlanosController extends Controller
     public function edit($id)
     {
         $plano = Plano::findOrFail($id);
-
         return view('planos.edit', ['plano' => $plano]);
     }
 
@@ -86,7 +85,7 @@ class PlanosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $plano = new Plano();
+        $plano = Plano::findOrFail($id);
 
         $plano->name = request('name');
         $plano->update();
@@ -102,7 +101,7 @@ class PlanosController extends Controller
      */
     public function destroy($id)
     {
-        $plano = new Plano();
+        $plano = Plano::findOrFail($id);
 
         $plano->delete();
         
