@@ -54,3 +54,12 @@ Route::get('/especialidades/show/{id}', 'EspecialidadesController@show')->name('
 Route::post('/especialidades', 'EspecialidadesController@store')->name('especialidades.store');
 Route::get('/especialidades', 'EspecialidadesController@index')->name('especialidades.index');
 Route::get('/especialidades/create', 'EspecialidadesController@create')->name('especialidades.create');
+
+# Rotas de consultas
+Route::post('/consultas/destroy/{id}', 'ConsultasController@destroy')->name('consultas.destroy');
+Route::post('/consultas/edit/{id}', 'ConsultasController@edit')->name('consultas.edit');
+Route::post('/consultas/update/{id}', 'ConsultasController@update')->name('consultas.update');
+Route::get('/consultas/show/{id}', 'ConsultasController@show')->name('consultas.show');
+Route::post('/consultas', 'ConsultasController@store')->name('consultas.store');
+Route::get('/consultas', 'ConsultasController@index')->name('consultas.index');
+Route::get('/consultas/create', 'ConsultasController@create')->name('consultas.create');
