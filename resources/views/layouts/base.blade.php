@@ -13,7 +13,10 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <!-- CSS Files -->
-  <link href='/css/material-dashboard.css' rel="stylesheet" />
+  <link rel="stylesheet" href="/ac/easy-autocomplete.min.css">
+  <link rel="stylesheet" href="/ac/easy-autocomplete.themes.min.css">
+  <link rel="stylesheet" href='/css/material-dashboard.css'>
+  <link rel="stylesheet" href="/css/jquery-ui.css">
 </head>
 <body class="">
     <div class="wrapper ">
@@ -93,6 +96,20 @@
                 <a class="nav-link" href="{{ route('medicos.index') }}">
                   <i class="material-icons">content_paste</i>
                   <p>Médicos</p>
+                </a>
+              </li>
+            </ul>
+            <li class="nav-item collapsed" data-toggle="collapse" href="#collapseOneConsultas" aria-expanded="false" aria-controls="collapseOne">
+              <a class="nav-link">
+                <i class="material-icons">content_paste</i>
+                <p>Consultas<b class="caret"></b></p>
+              </a>
+            </li>
+            <ul>
+              <li class="nav-item collapse" id="collapseOneConsultas" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
+                <a class="nav-link" href="{{ route('consultas.index') }}">
+                  <i class="material-icons">content_paste</i>
+                  <p>Consultas</p>
                 </a>
               </li>
             </ul>
@@ -240,6 +257,9 @@
         </div>
     </div>
 </div>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="/ac/jquery.easy-autocomplete.min.js"></script>
+    <script src='/js/digiconsult.js'></script>
     <!--   Core JS Files   -->
     <script src='/js/core/jquery.min.js'></script>
     <script src='/js/core/popper.min.js'></script>
@@ -283,8 +303,11 @@
     <script src='/js/material-dashboard.js' type="text/javascript"></script>
     <!-- Material Dashboard DEMO methods, don't include it in your project! -->
     <script src='/demo/demo.js'></script>
-    <script src='/js/digiconsult.js'></script>
-    <script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> -->
+<script>
     $(document).ready(function() {
         $().ready(function() {
         $sidebar = $('.sidebar');

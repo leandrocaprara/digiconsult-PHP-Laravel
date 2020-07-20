@@ -64,3 +64,65 @@ function pesquisacep(valor) {
         limpa_formulário_cep();
     }
 };
+
+$('#medico').change(function(e) {
+    let medico_id = $(this).val().split("-")[0].trim();
+    $('#medico_id').val(medico_id);
+});
+
+var medicos = {
+    url: function(phrase){
+        return "/api/autocomplete/medico";
+    },
+
+    getValue: function(element) {
+        return (element.id + " - " + element.name);
+    },
+
+    ajaxSettings: {
+        dataType: 'json',
+        method: "GET",
+        data: {
+            dataType: "json"
+        }
+    },
+    preparePostData: function(data) {
+        data.phrase = $("#medico").val();
+        console.log(data);
+    },
+
+    requestDelay: 40
+};
+
+$("#medico").easyAutocomplete(medicos);
+
+$('#paciente').change(function(e) {
+    let paciente_id = $(this).val().split("-")[0].trim();
+    $('#paciente_id').val(paciente_id);
+});
+
+var pacientes = {
+    url: function(phrase){
+        return "/api/autocomplete/paciente";
+    },
+
+    getValue: function(element) {
+        return (element.id + " - " + element.name);
+    },
+
+    ajaxSettings: {
+        dataType: 'json',
+        method: "GET",
+        data: {
+            dataType: "json"
+        }
+    },
+
+    preparePostData: function(data) {
+        data.phrase = $("#paciente").val();
+    },
+
+    requestDelay: 40
+};
+
+$("#paciente").easyAutocomplete(pacientes);

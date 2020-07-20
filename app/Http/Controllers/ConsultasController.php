@@ -5,10 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Consulta;
-use App\Medico;
-use App\Paciente;
 
-class ConsultaController extends Controller
+class ConsultasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -24,8 +22,9 @@ class ConsultaController extends Controller
     public function index()
     {
         $consulta = DB::table('consultas')
-                        ->join('consultas', 'consultas.consultas_id', '=', 'consultas.id')
-                        ->join('medicos', 'consultas.medicos_id', '=', 'medicos.id')
+                        ->join('pacientes', 'pacientes.id', '=', 'consultas.pacientes_id')
+                        ->join('medicos', 'medicos.id', '=', 'consultas.medicos_id')
+                        ->select('consultas.*', 'pacientes.name as paciente_nome', 'medicos.name as medico_nome')
                         ->get();
 
         return view('consultas.index', ['consultas' => $consulta]);
@@ -51,8 +50,8 @@ class ConsultaController extends Controller
     public function store(Request $request)
     {
         $consulta = new Consulta();
-        $consulta->medico_id = request('medicos_id');
-        $consulta->paciente_id = request('pacientes_id');
+        $consulta->medicos_id = request('medico_id');
+        $consulta->pacientes_id = request('paciente_id');
         $consulta->data = request('data');
         $consulta->consulta = request('consulta');
         $consulta->diagnostico = request('diagnostico');
@@ -99,8 +98,8 @@ class ConsultaController extends Controller
     {
         $consulta = Consulta::findOrFail($id);
 
-        $consulta->medico_id = request('medicos_id');
-        $consulta->paciente_id = request('pacientes_id');
+        $consulta->medicos_id = request('medico_id');
+        $consulta->pacientes_id = request('paciente_id');
         $consulta->data = request('data');
         $consulta->consulta = request('consulta');
         $consulta->diagnostico = request('diagnostico');

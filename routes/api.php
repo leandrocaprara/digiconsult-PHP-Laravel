@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/autocomplete/medico', 'AutoCompleteController@medico')->name('autocomplete.medico');
+Route::get('/autocomplete/paciente', 'AutoCompleteController@paciente')->name('autocomplete.paciente');

@@ -6,8 +6,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title" style="float: left;">Médicos</h4>
-                        <span class="material-icons" style="float: right;"><a href="{{ route('medicos.create') }}" style="color: white;">add</a></span>
+                        <h4 class="card-title" style="float: left;">Consultas</h4>
+                        <span class="material-icons" style="float: right;"><a href="{{ route('consultas.create') }}" style="color: white;">add</a></span>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -17,39 +17,39 @@
                                         ID
                                     </th>
                                     <th>
-                                        Nome
+                                        Paciente
                                     </th>
                                     <th>
-                                        CPF
+                                        Médico
                                     </th>
                                     <th>
-                                        Especialidade
+                                        Data
                                     </th>
                                     <th>
                                         Ações
                                     </th>
                                 </thead>
-                                @foreach ($medicos as $medico)
+                                @foreach ($consultas as $consulta)
                                 <tbody>
                                     <tr>
                                         <td>
-                                            {{ $medico->id }}
+                                            <a href="{{ route('consultas.show', $consulta->id) }}">{{ $consulta->id }}</a>
                                         </td>
                                         <td>
-                                            <a href="{{ route('medicos.show', $medico->id) }}">{{ $medico->name }}</a>
+                                            {{ $consulta->paciente_nome }}
                                         </td>
                                         <td>
-                                            {{ $medico->cpf }}
+                                            {{ $consulta->medico_nome }}
                                         </td>
                                         <td>
-                                            {{ $medico->especialidades_name }}
+                                            {{ $consulta->data }}
                                         </td>
                                         <td class="text-primary">
-                                        <form action="{{ route('medicos.destroy', $medico->id) }}" method="POST" class="form-button-actions form-button-delete">
+                                        <form action="{{ route('consultas.destroy', $consulta->id) }}" method="POST" class="form-button-actions form-button-delete">
                                             @csrf
                                             <button type="submit" class="material-icons" onclick="return confirm('Tem certeza que deseja excluir?')">delete</button>
                                         </form>
-                                        <form action="{{ route('medicos.edit', $medico->id) }}" method="POST" class="form-button-actions">
+                                        <form action="{{ route('consultas.edit', $consulta->id) }}" method="POST" class="form-button-actions">
                                             @csrf
                                             <button type="submit" class="material-icons">create</button>
                                         </form>
